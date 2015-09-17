@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+id="com.appcorner.cordova.swisseph"
+    version="0.1.14">
+
+    <name>SwissEph</name>
+    <description>Cordova SwissEph Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,swisseph</keywords>
+    <repo></repo>
+    <issue></issue>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <dependency id="org.apache.cordova.file" version=">=1.0.1" />
+
+  <asset src="www/SwissEph.js" target="js/SwissEph.js"/>
+  <!-- <asset src="www/ephe/semo_18.se1" target="ephe/semo_18.se1"/>
+  <asset src="www/ephe/sepl_18.se1" target="ephe/sepl_18.se1"/> -->
+
+  <js-module src="www/SwissEph.js" name="SwissEph">
+    <clobbers target="SwissEph" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="SwissEph">
+        <param name="android-package" value="com.appcorner.plugin.SwissEphHandler"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/SwissEphHandler.java" target-dir="src/com/appcorner/plugin/"/>
+    <source-file src="src/android/libs/swissephSWI-2.00.00-01.jar" target-dir="libs" />
+    <!-- <source-file src="src/android/libs/swisseph-2.01.00-01.jar" target-dir="libs" /> -->
+  </platform>
+
+</plugin>

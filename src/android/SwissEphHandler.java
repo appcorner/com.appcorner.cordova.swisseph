@@ -41,12 +41,12 @@ public class SwissEphHandler extends CordovaPlugin {
 
 	private String computeChart(String ephePath) {
         // Input data:
-        int year = 1948;
-        int month = 5;
-        int day = 31;
-        double longitude = 80 + 17 / 60.0;    // Chennai
-        double latitude = 13 + 5 / 60.0;
-        double hour = 19 + 20. / 60. - 5.5; // IST
+        int year = 2015;
+        int month = 9;
+        int day = 17;
+        double longitude = 100.523186;    // BKK, TH
+        double latitude = 13.736717;
+        double hour = 12 + 30. / 60. - 7.0; // GMT+7
         String printString;
 
 		/*Instances of utility classes */
